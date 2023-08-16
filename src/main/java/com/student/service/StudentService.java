@@ -14,4 +14,15 @@ public class StudentService {
         stdList.add(new StudentModel("kushal","singh","ajmer",102));
         return stdList;
     }
+
+
+    public StudentModel addStudent(StudentModel studentModel){
+        //stdList.add(studentModel);
+        //return stdList.add(studentModel) ? studentModel : null;
+        if(stdList.add(studentModel)){
+            return studentModel;
+        }else{
+            return null;
+        }
+    }
 }

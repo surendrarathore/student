@@ -3,9 +3,7 @@ package com.student.controller;
 import com.student.model.StudentModel;
 import com.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,10 @@ public class StudentController {
     public List<StudentModel> getAllStudentData(){
         //return List.of(new StudentModel());
         return studentService.getAllStudent();
+    }
+
+    @PostMapping("/addstudent")
+    public StudentModel addStudent(@RequestBody StudentModel studentModel){
+        return studentService.addStudent(studentModel);
     }
 }
