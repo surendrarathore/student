@@ -5,13 +5,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class StudentService {
     private List<StudentModel> stdList = new ArrayList<>();
-    public List<StudentModel> getAllStudent(){
+
+    public StudentService(){
         stdList.add(new StudentModel("robin","singh","kota",101));
         stdList.add(new StudentModel("kushal","singh","ajmer",102));
+    }
+    public List<StudentModel> getAllStudent(){
         return stdList;
     }
 
@@ -25,4 +29,16 @@ public class StudentService {
             return null;
         }
     }
+
+    public StudentModel updateStudent(StudentModel studentModel){
+        for (StudentModel std: stdList) {
+            if(Objects.equals(std.getRollNo(), studentModel.getRollNo())){
+                std.setCity(studentModel.getCity());
+                std.setFirstName(studentModel.getFirstName());
+                std.setLastName(studentModel.getLastName());
+            }
+        }
+        return studentModel;
+    }
+
 }
