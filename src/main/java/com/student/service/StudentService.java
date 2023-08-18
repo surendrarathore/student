@@ -41,4 +41,23 @@ public class StudentService {
         return studentModel;
     }
 
+    public String deleteStudent(Integer rollNumber){
+       /* StudentModel deleteStd = null;
+        for(StudentModel std: stdList){
+            if(std.getRollNo().equals(rollNumber)){
+                deleteStd = std;
+                break;
+            }
+        }
+      boolean res =   stdList.remove(deleteStd);*/
+
+        boolean res =  stdList.removeIf(std->std.getRollNo().equals(rollNumber));
+
+      if(res){
+          return "success";
+      }else {
+          return "fail";
+      }
+    }
+
 }
