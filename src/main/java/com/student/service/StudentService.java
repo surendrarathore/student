@@ -9,5 +9,6 @@ import java.util.Objects;
 
 public interface StudentService {
     StudentModel saveStudent(StudentModel studentModel);
+    List<StudentModel> getAllStudentModel();
 
 }

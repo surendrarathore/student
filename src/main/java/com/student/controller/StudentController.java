@@ -19,8 +19,7 @@ public class StudentController {
 
     @GetMapping("/getallstudent")
     public List<StudentModel> getAllStudentData(){
-        //return List.of(new StudentModel());
-        return null;
+        return studentService.getAllStudentModel();
     }
 
     @PostMapping("/addstudent")
